@@ -1,3 +1,5 @@
+base <-read.table("base.csv",header=TRUE,sep = ";")
+
 ui <- fluidPage(
   
   
@@ -16,17 +18,15 @@ ui <- fluidPage(
                   min=0,
                   max = 10,
                   value = 5),
-<<<<<<< HEAD
-      
+
       sliderInput("stress",
                   "Niveau de stress:",
                   min=1,
                   max = 7,
-                  value = 2)
-=======
+                  value = 2),
+      
       selectInput("espece", "Choisir une espece:",
                   choices = base[,1])
->>>>>>> 0a6624136f3db6f742e49ef699cbf00766b53ea9
     ),
     mainPanel(
       plotOutput("loinorm"),
@@ -36,5 +36,3 @@ ui <- fluidPage(
     
   )
 )
-
-
