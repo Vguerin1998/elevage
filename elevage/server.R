@@ -1,6 +1,6 @@
 server <- function(input, output) {
   base<-read.table("base.csv",header=TRUE,sep = ";",encoding = "UTF8")
-  
+
   output$loinorm <- renderPlot({
     
   if(input$espece=="Drosophile payetum"){poids_moyen<-0.1;croissance<-0.05;sd<-0.01}else if
@@ -16,15 +16,25 @@ server <- function(input, output) {
       (input$stress == 5){poids_moyen <- poids_moyen*0.13 } else if
        (input$stress == 6){poids_moyen <- poids_moyen*0.110 } else if
         (input$stress == 7){poids_moyen <- poids_moyen*0.05 }
-    
+
+if(input$stress == 1){Nb <- input$Nb*1; poids_moyen <- 0.1 } else if
+   (input$stress == 2){Nb <- input$Nb*1.1; poids_moyen <- 0.115 } else if
+    (input$stress == 3){Nb <- input$Nb*1.2; poids_moyen <- 0.12 } else if
+     (input$stress == 4){Nb <- input$Nb*1.3; poids_moyen <- 0.125 } else if
+      (input$stress == 5){Nb <- input$Nb*1.4; poids_moyen <- 0.13 } else if
+       (input$stress == 6){Nb <- input$Nb*1.1; poids_moyen <- 0.110 } else if
+        (input$stress == 7){Nb <- input$Nb*1.02; poids_moyen <- 0.095 }
+
     hist(rnorm(input$Nb,mean=poids_moyen+input$jour*croissance,sd=sd), 
          
          main = paste("Répartition des poids de l'élevage au jour",input$jour,", avec un niveau de stress",input$stress),
          
-         col="grey", xlab = "Poids en mg ", ylab = "Nb d'individu par tranche de poids ",)
+         col="grey", xlab = "Poids en mg ", ylab = "Nb d'individu par tranche de poids ")
+
   })
+  
   output$nous <- renderText({
-    "T DEMESSE & V GUERIN"
+    "Groupe 3"
   })
   
 }

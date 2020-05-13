@@ -30,8 +30,7 @@ ui <- fluidPage(
     ),
     mainPanel(
       plotOutput("loinorm"),
-      textOutput("nous")
-      
+      textOutput("nous"),
     )
     
   )
