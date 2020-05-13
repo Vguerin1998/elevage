@@ -31,7 +31,9 @@ ui <- fluidPage(
     mainPanel(
       plotOutput("loinorm"),
       textOutput("poids"),
+      textOutput("nbyb"),
       plotOutput("espece"),
-      textOutput("nous"))
+      textOutput("nous")
+      )
   )
 )
