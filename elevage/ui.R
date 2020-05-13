@@ -3,7 +3,7 @@ base <-read.table("base.csv",header=TRUE,sep = ";")
 ui <- fluidPage(
   
   
-  titlePanel("Suivi d'un élevage de drosophiles"),
+  titlePanel(textOutput("title_panel")),
   
   sidebarLayout(
     sidebarPanel(
