@@ -30,12 +30,12 @@ server <- function(input, output) {
   })
   output$poids<-renderText({
     if(input$espece=="Drosophile payetum"){poids_moyen<-0.1;croissance<-0.05;sd<-0.01}else if
-    (input$espece=="Tabanus savetus"){poids_moyen<-1;croissance<-0.2;sd<-0.3}else if
-    (input$espece=="Lucilia bertelettus"){poids_moyen<-0.8;croissance<-0.15;sd<-0.04}else if
+    (input$espece=="Tabanus savetus"){poids_moyen<-1;croissance<-0.7;sd<-0.3}else if
+    (input$espece=="Lucilia bertelettus"){poids_moyen<-0.8;croissance<-0.5;sd<-0.04}else if
     (input$espece=="Syrphus billitus"){poids_moyen<-0.5;croissance<-0.1;sd<-0.025}else if
-    (input$espece=="Eristale bonumgirus"){poids_moyen<-0.7;croissance<-0.3;sd<-0.03}
+    (input$espece=="Eristale bonumgirus"){poids_moyen<-0.7;croissance<-0.6;sd<-0.03}
     
-    paste("Le poids potentiellement atteignable (au jour 10 une fois les ailes retirées) de l'elevage est :", (poids_moyen*input$Nb)/1000,"g")
+    paste("Le poids potentiellement atteignable (une fois les ailes retirées) de l'elevage est :", (poids_moyen+input$jour*croissance*input$Nb)/1000," g")
   })
   
   output$nous <- renderText({
@@ -50,6 +50,9 @@ server <- function(input, output) {
     (input$espece == "Eristale bonumgirus"){femelle <- 60; male <- 40 } 
     
     pie(c(male,femelle), col=c("#AAFFAA","#FFAAAA"),labels=c(paste("Male",male,"%"), paste("Femelle",femelle,"%")), main="Repartition male / femelle",cex=1.5)
+  })
+  output$nbyb<-renderText({
+    paste("Le nombre de mouches avec les yeux bleus dans la population est de :", round(runif(1,0,1)*input$Nb)," mouches")
   })
   
 }
