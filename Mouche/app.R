@@ -17,7 +17,13 @@ ui <- fluidPage(
                     "Nombre de jours d'elevage :",
                     min=0,
                     max = 10,
-                    value = 5)
+                    value = 5),
+            
+            sliderInput("stress",
+                        "Indice de stress",
+                        min=0,
+                        max = 10,
+                        value = 5),
             ),
     
         mainPanel(
