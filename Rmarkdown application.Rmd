@@ -1,0 +1,14 @@
+---
+title: "Application"
+author: Orianne COSI, Maële MALEYSSON, Thibaut DEMESSE, Vivien GUERIN, Céline JACQUETON,
+  Perrine TRUCHE, Eloïse GIROUD, Bastian SAUZE
+date: "13/05/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Fonctionnement de notre application 
+
