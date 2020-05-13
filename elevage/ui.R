@@ -3,7 +3,7 @@ base <-read.table("base.csv",header=TRUE,sep = ";")
 ui <- fluidPage(
   
   
-  titlePanel(textOutput("title_panel")),
+  titlePanel(textOutput("title_panel"),windowTitle = "Elevage"),
   
   sidebarLayout(
     sidebarPanel(
