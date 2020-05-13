@@ -16,13 +16,16 @@ ui <- fluidPage(
                   min=0,
                   max = 10,
                   value = 5),
+      selectInput("espece", "Choisir une espece:",
+                  choices = base[,1])
     ),
-    
     mainPanel(
       plotOutput("loinorm"),
       textOutput("nous")
-    ),
+      
+    )
     
   )
 )
+
 
