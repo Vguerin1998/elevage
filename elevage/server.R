@@ -28,10 +28,19 @@ server <- function(input, output) {
          col="grey", xlab = "Poids en mg ", ylab = "Nb d'individu par tranche de poids ")
 
   })
-  
+  output$poids<-renderText({
+    if(input$espece=="Drosophile payetum"){poids_moyen<-0.1;croissance<-0.05;sd<-0.01}else if
+    (input$espece=="Tabanus savetus"){poids_moyen<-1;croissance<-0.2;sd<-0.3}else if
+    (input$espece=="Lucilia bertelettus"){poids_moyen<-0.8;croissance<-0.15;sd<-0.04}else if
+    (input$espece=="Syrphus billitus"){poids_moyen<-0.5;croissance<-0.1;sd<-0.025}else if
+    (input$espece=="Eristale bonumgirus"){poids_moyen<-0.7;croissance<-0.3;sd<-0.03}
+    
+    paste("Le poids potentiellement atteignable (au jour 10 une fois les ailes retirées) de l'elevage est :", (poids_moyen*input$Nb)/1000,"g")
+  })
   output$nous <- renderText({
     "Groupe 3"
   })
+ 
   
 }
 
