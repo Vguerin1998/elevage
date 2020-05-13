@@ -1,4 +1,5 @@
 server <- function(input, output) {
+  base<-read.table("base.csv",header=TRUE,sep = ";",encoding = "UTF8")
   
   output$loinorm <- renderPlot({
     
@@ -19,7 +20,8 @@ server <- function(input, output) {
          col="grey", xlab = "Poids en mg ", ylab = "Nb d'individu par tranche de poids ",)
   })
   output$nous <- renderText({
-    "Groupe 3"
+    "T DEMESSE & V GUERIN"
   })
   
 }
+
