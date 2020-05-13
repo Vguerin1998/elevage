@@ -18,7 +18,7 @@ ui <- fluidPage(
                   min=0,
                   max = 10,
                   value = 5),
-
+      
       sliderInput("stress",
                   "Niveau de stress:",
                   min=1,
@@ -31,8 +31,6 @@ ui <- fluidPage(
     mainPanel(
       plotOutput("loinorm"),
       textOutput("nous"),
-      textOutput("poids")
-    )
-    
+      plotOutput("espece"))
   )
 )
