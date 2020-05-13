@@ -1,6 +1,10 @@
 server <- function(input, output) {
   base<-read.table("base.csv",header=TRUE,sep = ";",encoding = "UTF8")
-
+  
+  output$title_panel <- renderText({
+    paste0("Suivi d'un élevage de ", input$espece )
+  })
+  
   output$loinorm <- renderPlot({
     
   if(input$espece=="Drosophile payetum"){poids_moyen<-0.1;croissance<-0.05;sd<-0.01}else if
