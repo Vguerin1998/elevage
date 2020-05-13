@@ -1,11 +1,11 @@
 server <- function(input, output) {
   base<-read.table("base.csv",header=TRUE,sep = ";",encoding = "UTF8")
-  
+
   output$loinorm <- renderPlot({
     
     poids_moyen <- 0.1
     
-  if(input$stress == 1){Nb <- input$Nb*1; poids_moyen <- 0.1 } else if
+if(input$stress == 1){Nb <- input$Nb*1; poids_moyen <- 0.1 } else if
    (input$stress == 2){Nb <- input$Nb*1.1; poids_moyen <- 0.115 } else if
     (input$stress == 3){Nb <- input$Nb*1.2; poids_moyen <- 0.12 } else if
      (input$stress == 4){Nb <- input$Nb*1.3; poids_moyen <- 0.125 } else if
@@ -17,10 +17,12 @@ server <- function(input, output) {
          
          main = paste("Répartition des poids de l'élevage au jour",input$jour,", stress =",input$stress),
          
-         col="grey", xlab = "Poids en mg ", ylab = "Nb d'individu par tranche de poids ",)
+         col="grey", xlab = "Poids en mg ", ylab = "Nb d'individu par tranche de poids ")
+
   })
+  
   output$nous <- renderText({
-    "T DEMESSE & V GUERIN"
+    "Groupe 3"
   })
   
 }
