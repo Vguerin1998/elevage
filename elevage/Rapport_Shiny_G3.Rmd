@@ -28,11 +28,11 @@ Dans le cadre du module optionnel "OPEN", nous avons constitué un groupe de 7 �
 
 Dans ce rapport, nous verrons l'utilisation concrète du paquet SHINY pour l'élaboration d'un document dynamique. 
 Le but de SHINY est de créer un document à variables actives, qui peuvent être changées par l'utilisateur pour étudier l'évolution d'une équation ou d'un graphique selon une complexité de facteurs.
-Dans le cas présent, nous nous intéresserons à l'évolution de la répartition du poids d'un ensemble de mouches drosophiles, selon 4 facteurs différents :
-* Le nombre de mouches dans l'élevage
-* Le nombre de jours d'élevage
-* Le niveau de stress
-* L'espèce de mouche
+Dans le cas présent, nous nous intéresserons à l'évolution de la répartition du poids d'un ensemble de mouches drosophiles, selon 4 facteurs différents :  
+* Le nombre de mouches dans l'élevage  
+* Le nombre de jours d'élevage  
+* Le niveau de stress  
+* L'espèce de mouche  
 
 # Application envisagée
 
@@ -45,22 +45,18 @@ En termes de production on souhaite observer à partir de combien de jour d'éle
 ### Reproduction
 
 En termes de reproduction, le but est de péréniser l'élevage la répatition Male/Femelle.
-Enfin, en termes d'analyses annexes, on souhaite observer le nombre d'individus avec un potentiel génétique intéressant (yeux bleus).
-
-### Autre débouchés
-
-Le nombre d’individus avec un potentiel génétique intéressant (yeux bleus) leur permettant de servir d’animal de compagnie est de x.
+Enfin, en termes d'analyses annexes, on souhaite observer le nombre d'individus avec un potentiel génétique intéressant (yeux bleus)leur permettant de servir d’animal de compagnie est de x.
 
 # Application réalisée
 
-Nous avons donc réalisée une application permettant à l'utilisateur (un éléveur de mouche) de gérer son élevage.
+Nous avons donc réalisé une application permettant à l'utilisateur (un éléveur de mouche) de gérer son élevage.
 L'utilisateur peut renseigner grâce à des curseurs le nombre de mouches de son élevage, le nombre de jours d'élevage et le niveau de stress de ses mouches. Lorsque l'éleveur renseigne ces trois curseurs, l'application modélise un histogramme de répartition des poids des mouches de l'élevage (en mg) au jour J, prenant en compte leur niveau de stress. Cette histogramme suit une loi normale.
 Enfin, une liste déroulante permet à l'éleveur d'informer l'application de la race qu'il élève. Cette information permet ensuite d'estimer la proportion de mâle et de femelle dans l'élevage. 
 
 Nous  avons choisi de rajouter une option à la fin de notre rapport qui  permette de générer un rapport. Le but de celui-ci est de générer un  fichier qui puisse être conservé et qui fasse référence à des paramètres  choisis. Par exemple, nous pourrions vouloir observer les différences  de poids pour chaque espèce donnée, avec 100 mouches, 2 jours d'élevage et niveau de stress à 1. Ou bien, au sein d'une même espèce, conserver  nos observations pour un niveau de stress à 1 ou à 5.
- Un bouton "Générer un rapport" s'affiche donc en bas de l'application. Lorsuqe l'on clique dessus, cela entraine la création d'un rapport.Rmd. Ce rapport doit être enregistré dans le même dossier que celui dans lequel se trouve l'application Shiny. On peut alors l'ouvrir : un rapport en html s'ouvre, et permet d'afficher les informations essentielles que l'on souhaite enregistrer, re consulter plus tard et analyser. 
+Un bouton "Générer un rapport" s'affiche donc en bas de l'application. Lorsque l'on clique dessus, cela entraine la création d'un rapport.Rmd. Ce rapport doit être enregistré dans le même dossier que celui dans lequel se trouve l'application Shiny. On peut alors l'ouvrir : un rapport en html s'ouvre, et permet d'afficher les informations essentielles que l'on souhaite enregistrer, re-consulter plus tard et analyser. 
 
-Avant toute chose, il est nécessaire de construire pas-à-pas le document SHINY, ce qui ce fait premièrement en définissant les variables et les valeurs qu'elles peuvent prendre :
+Avant toute chose, il est nécessaire de construire pas-à-pas le document SHINY, ce qui ce fait premièrement en définissant les variables et les valeurs qu'elles peuvent prendre.
 
 ## Création et définition des variables
 
@@ -96,14 +92,14 @@ base<-read.table("base.csv",header=TRUE,sep = ";",encoding = "UTF8")
 
 ## Partie Graphique
 
-A présent, voyons comment ces données sont représentée dans un graphique à barres :
+A présent, voyons comment ces données sont représentées dans un graphique à barres :
 =======
 
 # Difficultés rencontrées
  
 ### Création du bouton "Générer un rapport". 
 
-Nous avons donc rechercher un input "downloadbutton" dans la Gallery R Shiny, ainsi que l'output permettant de générer un rapport et le code correspondant. Après de nombreux essais sans réussite, nous avons compris qu'il nous manquait une partie : dans la partie server nous faisons effectivement référence à un rapport.Rmd. Ce rapport nous sert en réalité de base pour l'affichage des données de Shiny en Rmarkdown. Il s'agit ainsi de paramétrer chaque input/output que l'on souhaite faire apparaître dans le rapport final dans le rapport.Rmd. Cela peut sembler anecdoctique mais il nous a fallu en réalité beaucoup de temps pour régler ce problème. Une des parties les plus chronophages a été d'adapter le code de la Gallery à notre code déjà existant sans oublier de parenthèses ou de virgules, ce qui empêchait l'application de fonctionner. 
+Nous avons donc rechercher un input "downloadbutton" dans la Gallery R Shiny, ainsi que l'output permettant de générer un rapport et le code correspondant. Après de nombreux essais sans réussite, nous avons compris qu'il nous manquait une partie : dans la partie server nous faisons effectivement référence à un rapport.Rmd. Ce rapport nous sert en réalité de base pour l'affichage des données de Shiny en Rmarkdown. Il s'agit ainsi de paramétrer chaque input/output que l'on souhaite faire apparaître dans le rapport final dans le rapport.Rmd. Cela peut sembler anecdoctique mais il nous a fallu en réalité beaucoup de temps pour régler ce problème. Une des parties les plus chronophages a été d'adapter le code de la Gallery à notre code déjà existant sans oublier des parenthèses ou des virgules, ce qui empêchait l'application de fonctionner. 
 
 ### Fichier CSV
 
