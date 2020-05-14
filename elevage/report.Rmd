@@ -1,0 +1,29 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+params: 
+    set_title: "Rapport d'élevage"
+    n: "NA"
+title: "`r params$set_title`"
+---
+
+```{r eval = FALSE, echo = FALSE}
+# For PDF output, change the header to have "output: pdf_document".
+#
+# Note that due to an issue in rmarkdown, the default value of a parameter in
+# the header cannot be `NULL`, so I used a default of `NA` for the default value
+# of `n`.
+```
+
+
+```{r}
+# Les paramètres choisis sont disponibles dans le document. 
+params$n
+```
+
+Un histogramme `params$n` des différents points.
+
+```{r}
+
+```
