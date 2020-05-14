@@ -1,6 +1,6 @@
 ---
 title: "Rapport Shiny"
-author: "GROUPE 3"
+author: "GROUPE 3 : Orianne COSI - Maële MALEYSSON - Thibaut DEMESSE - Vivien GUERIN - Céline JACQUETON - Eoise GIROUD - Bastian SAUZE"
 runtime: shiny
 date: '`r format(Sys.time(), "%d-%m-%Y")`'
 fig_caption: yes
