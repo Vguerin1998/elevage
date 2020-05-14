@@ -26,17 +26,20 @@ ui <- fluidPage(
                   value = 2),
       
       selectInput("espece", "Choisir une espece:",
-                  choices = base[,1])
+                  choices = base[,1]),
+    
+    downloadButton("report", "Generer le rapport"),
     ),
-    actionButton("btnimg","Mais a quoi peut bien ressembler cet animal ?"),
+    #actionButton("btnimg","Mais a quoi peut bien ressembler cet animal ?"),
+  
     mainPanel(
       plotOutput("loinorm"),
       textOutput("poids"),
       textOutput("nbyb"),
       plotOutput("espece"),
-      img(src="drosophile.png", height = 200, width = 200),
-      textOutput("nous")
-      
+      #img(src="drosophile.png", height = 200, width = 200),
+      textOutput("nous"),
+      uiOutput("report")
+    ) 
       )
-  )
 )
