@@ -64,7 +64,7 @@ server <- function(input, output) {
       tempReport <- file.path(tempdir(), "report.Rmd")
       file.copy("report.Rmd", tempReport, overwrite = TRUE)
       
-      params <- list(s = input$espece, j=input$jour,pop=input$Nb, poids=input$poids_moyen)
+      params <- list(s = input$espece, j=input$jour,pop=input$Nb, poids="poids")
       
       rmarkdown::render(tempReport, output_file = file,
                         params = params,
