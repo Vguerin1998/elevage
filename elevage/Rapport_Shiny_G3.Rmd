@@ -36,7 +36,7 @@ Dans le code suivant, nous avons chargé la bibliothèque SHINY, qui permet de p
 
 ```{r echo=T}
 library("shiny")
-source("server.R")
+
 base<-read.table("base.csv",header=TRUE,sep = ";",encoding = "UTF8")
         
       sliderInput("Nb",
@@ -61,9 +61,9 @@ base<-read.table("base.csv",header=TRUE,sep = ";",encoding = "UTF8")
                   choices = base[,1])
 ```
 
-## Embedded Application
+## Partie Graphique
 
-It's also possible to embed an entire Shiny application within an R Markdown document using the `shinyAppDir` function. This example embeds a Shiny application located in another directory:
+A présent, voyons comment ces données sont représentée dans un graphique à barres :
 
 ```{r tabsets, echo=FALSE}
 

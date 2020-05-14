@@ -25,7 +25,7 @@ ui <- fluidPage(
                   max = 7,
                   value = 2),
       
-      selectInput("espece", "Choisir une espece:",
+      selectInput("espece", "Choisir une espèce:",
                   choices = base[,1]),
       
     ), 
