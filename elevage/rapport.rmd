@@ -1,27 +1,25 @@
 ---
-title: "Rapport SHINY G3"
+title: "Rapport D'elevage"
 output: html_document
 params:
-  source:"app.R"
-  n: NA
+  source: "app.R"
+  s: NA
+  j: NA
+  pop: NA
+  poids: NA 
+  nbyb: NA
 ---
 
-```{r eval = FALSE, echo = FALSE}
-# For PDF output, change the header to have "output: pdf_document".
-#
-# Note that due to an issue in rmarkdown, the default value of a parameter in
-# the header cannot be `NULL`, so I used a default of `NA` for the default value
-# of `n`.
-```
+# ***Production***
 
+Au bout du x eme jour d'elevage avec une population de x individus de l'espèce x on peut esperer produire x g de matière sèche.
 
-```{r}
-# The `params` object is available in the document.
-params$n
-```
+#***Reproduction***
 
-A plot of `params$n` random points.
+Dans le but de péréniser l'élevage la répatition Male/femelle est la suivante : 
+Graph
 
-```{r}
-plot(rnorm(params$n), rnorm(params$n))
-```
+# ***Autre débouchés***
+
+Le nombre d'individus avec un potentiel génétique intéressant (yeux bleus) leur permettant de servir d'animal de compagnie est de x. 
+
