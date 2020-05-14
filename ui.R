@@ -3,7 +3,7 @@ base <-read.table("base.csv",header=TRUE,sep = ";")
 ui <- fluidPage(
   
   
-  titlePanel("Suivi d'un élevage de drosophiles"),
+  titlePanel(textOutput("title_panel"),windowTitle = "Elevage"),
   
   sidebarLayout(
     sidebarPanel(
@@ -18,7 +18,7 @@ ui <- fluidPage(
                   min=0,
                   max = 10,
                   value = 5),
-
+      
       sliderInput("stress",
                   "Niveau de stress:",
                   min=1,
@@ -30,15 +30,12 @@ ui <- fluidPage(
     ),
     mainPanel(
       plotOutput("loinorm"),
-      textOutput("nous"),
-      textOutput("Nbyeuxbleus"),
+      textOutput("poids"),
+      textOutput("nbyb"),
+      plotOutput("espece"),
+      img(src="drosophile.png", height = 200, width = 200),
+      textOutput("nous")
       
-      runif(1, min=0, max=0.2)* Nbyeuxbleus,  
-      
-    
-   
-    )
-    
+      )
   )
 )
-s

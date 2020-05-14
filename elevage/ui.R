@@ -28,6 +28,7 @@ ui <- fluidPage(
       selectInput("espece", "Choisir une espece:",
                   choices = base[,1])
     ),
+    actionButton("btnimg","Mais a quoi peut bien ressembler cet animal ?"),
     mainPanel(
       plotOutput("loinorm"),
       textOutput("poids"),

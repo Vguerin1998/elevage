@@ -51,8 +51,13 @@ server <- function(input, output) {
     
     pie(c(male,femelle), col=c("#AAFFAA","#FFAAAA"),labels=c(paste("Male",male,"%"), paste("Femelle",femelle,"%")), main="Repartition male / femelle",cex=1.5)
   })
+  
   output$nbyb<-renderText({
     paste("Le nombre de mouches avec les yeux bleus dans la population est de :", round(runif(1,0,1)*input$Nb)," mouches")
+  })
+  
+  input$btnimg({
+    
   })
   
 }
