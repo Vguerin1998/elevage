@@ -1,0 +1,25 @@
+---
+title: "Rapport D'elevage"
+output: html_document
+params:
+  source: "app.R"
+  s: NA
+  j: NA
+  pop: NA
+  poids: NA 
+  nbyb: NA
+---
+
+# ***Production***
+
+Au bout du x eme jour d'elevage avec une population de x individus de l'espèce x on peut esperer produire x g de matière sèche.
+
+#***Reproduction***
+
+Dans le but de péréniser l'élevage la répatition Male/femelle est la suivante : 
+Graph
+
+# ***Autre débouchés***
+
+Le nombre d'individus avec un potentiel génétique intéressant (yeux bleus) leur permettant de servir d'animal de compagnie est de x. 
+
