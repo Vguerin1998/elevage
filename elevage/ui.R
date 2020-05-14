@@ -34,7 +34,9 @@ ui <- fluidPage(
       textOutput("poids"),
       textOutput("nbyb"),
       plotOutput("espece"),
+      img(src="drosophile.png", height = 200, width = 200),
       textOutput("nous")
+      
       )
   )
 )
