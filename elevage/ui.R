@@ -34,8 +34,8 @@ ui <- fluidPage(
       textOutput("poids"),
       textOutput("nbyb"),
       plotOutput("espece"),
-      textOutput("nous"),
-      downloadButton("report", "Generer un rapport")    
+      downloadButton("report", "Generer un rapport"),
+      textOutput("nous")   
     ) 
       )
 )
