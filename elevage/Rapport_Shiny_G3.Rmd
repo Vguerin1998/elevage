@@ -70,7 +70,7 @@ Dans le code suivant, nous avons chargé la bibliothèque SHINY, qui permet de p
 
 ```{r echo=T}
 library("shiny")
-source("server.R")
+
 base<-read.table("base.csv",header=TRUE,sep = ";",encoding = "UTF8")
         
       sliderInput("Nb",
@@ -95,10 +95,16 @@ base<-read.table("base.csv",header=TRUE,sep = ";",encoding = "UTF8")
                   choices = base[,1])
 ```
 
+<<<<<<< HEAD
+## Partie Graphique
+
+A présent, voyons comment ces données sont représentée dans un graphique à barres :
+=======
 
 # Difficultés rencontrées
  
 ### Création du bouton "Générer un rapport". 
+>>>>>>> eae41dc515ec2e7a5420fb29d33e679558706b12
 
 Nous avons donc rechercher un input "downloadbutton" dans la Gallery R Shiny, ainsi que l'output permettant de générer un rapport et le code correspondant. Après de nombreux essais sans réussite, nous avons compris qu'il nous manquait une partie : dans la partie server nous faisons effectivement référence à un rapport.Rmd. Ce rapport nous sert en réalité de base pour l'affichage des données de Shiny en Rmarkdown. Il s'agit ainsi de paramétrer chaque input/output que l'on souhaite faire apparaître dans le rapport final dans le rapport.Rmd. Cela peut sembler anecdoctique mais il nous a fallu en réalité beaucoup de temps pour régler ce problème. Une des parties les plus chronophages a été d'adapter le code de la Gallery à notre code déjà existant sans oublier de parenthèses ou de virgules, ce qui empêchait l'application de fonctionner. 
 

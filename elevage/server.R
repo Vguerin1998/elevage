@@ -49,7 +49,7 @@ server <- function(input, output) {
     (input$espece == "Syrphus billitus"){femelle <- 53; male <- 47 } else if
     (input$espece == "Eristale bonumgirus"){femelle <- 60; male <- 40 } 
     
-    pie(c(male,femelle), col=c("#AAFFAA","#FFAAAA"),labels=c(paste("Male",male,"%"), paste("Femelle",femelle,"%")), main="Repartition male / femelle",cex=1.5)
+    pie(c(male,femelle), col=c("#AAFFAA","#FFAAAA"),labels=c(paste("Mâle",male,"%"), paste("Femelle",femelle,"%")), main="Repartition male / femelle",cex=1.5)
   })
   
   output$nbyb<-renderText({
