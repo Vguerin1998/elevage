@@ -7,8 +7,6 @@ toc-title: 'Sommaire'
 default: html_document
 always_allow_html: true
 output:
-  html_notebook: 
-    toc: yes
   html_document:
     fig_caption: yes
     number_sections: no
@@ -20,16 +18,23 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+## Introduction
+Dans ce rapport, nous verrons l'utilisation concrète du paquet SHINY pour l'élaboration d'un document dynamique. 
+Le but de SHINY est de créer un document à variables actives, qui peuvent être changées par l'utilisateur pour étudier l'évolution d'une équation ou d'un graphique selon une complexité de facteurs.
+Dans le cas présent, nous nous intéresserons à l'évolution de la répartition du poids d'un ensemble de mouches drosophiles, selon 4 facteurs différents :
+* Le nombre de mouches dans l'élevage
+* Le nombre de jours d'élevage
+* Le niveau de stress
+* L'espèce de mouche
 
-This R Markdown document is made interactive using Shiny. Unlike the more traditional workflow of creating static reports, you can now create documents that allow your readers to change the assumptions underlying your analysis and see the results immediately. 
+Avant toute chose, il est nécessaire de construire pas-à-pas le document SHINY, ce qui ce fait premièrement en définissant les variables et les valeurs qu'elles peuvent prendre :
 
-To learn more, see [Interactive Documents](http://rmarkdown.rstudio.com/authoring_shiny.html).
+## Création et définition des variables
 
-## Inputs and Outputs
+Dans le code suivant, nous avons chargé la bibliothèque SHINY, qui permet de produire des documents dynamiques, un peu à la manière de PHP dans les technologies Web. Nous définissons les variables avec un intervalle de valeurs max et min, et une valeur standard à l'ouverture du document. De même, nous faisons l'intégration d'un document ```base.csv``` pour créer une liste déroulante contenant des espèces prédéfinies. Pour le reste des variables, elles se présenteront comme un curseur à manipuler pour changer l'affectation des valeurs en temps réel :
 
-You can embed Shiny inputs and outputs in your document. Outputs are automatically updated whenever inputs change.  This demonstrates how a standard R plot can be made interactive by wrapping it in the Shiny `renderPlot` function. The `selectInput` and `sliderInput` functions create the input widgets used to drive the plot.
 
-```{r echo=FALSE}
+```{r echo=T}
 library("shiny")
 source("server.R")
 base<-read.table("base.csv",header=TRUE,sep = ";",encoding = "UTF8")
