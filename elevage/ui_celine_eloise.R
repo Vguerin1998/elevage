@@ -3,7 +3,7 @@ base <-read.table("base.csv",header=TRUE,sep = ";")
 ui <- fluidPage(
   
   
-  titlePanel(textOutput("title_panel"),windowTitle = "Elevage"),
+  titlePanel(textOutput("title_panel")),
   
   sidebarLayout(
     sidebarPanel(
@@ -18,25 +18,19 @@ ui <- fluidPage(
                   min=0,
                   max = 10,
                   value = 5),
-      
+
       sliderInput("stress",
                   "Niveau de stress:",
                   min=1,
                   max = 7,
                   value = 2),
       
-      selectInput("espece", "Choisir une espèce:",
-                  choices = base[,1]),
-      
-    ), 
+      selectInput("espece", "Choisir une espece:",
+                  choices = base[,1])
+    ),
     mainPanel(
       plotOutput("loinorm"),
-      textOutput("poids"),
-      textOutput("nbyb"),
-      plotOutput("espece"),
-      downloadButton("report", "Generer un rapport"),
-      actionButton("show", "Mais à quoi peut bien ressembler ce curieux animal ?"),
-      textOutput("nous")   
-    ) 
-      )
+      textOutput("nous"),
+    plotOutput("espece"))
+  )
 )
