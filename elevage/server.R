@@ -64,7 +64,7 @@ server <- function(input, output) {
       tempReport <- file.path(tempdir(), "report.Rmd")
       file.copy("report.Rmd", tempReport, overwrite = TRUE)
       
-      params <- list(s=input$espece, j=input$jour,pop=input$Nb, poids="poids",nby="nbyb")
+      params <- list(s=input$espece, j=input$jour,pop=input$Nb, poids="100 000 ")
       
       rmarkdown::render(tempReport, output_file = file,
                         params = params,
@@ -74,14 +74,12 @@ server <- function(input, output) {
  
   observeEvent(input$show, {
     showModal(modalDialog(
-      title = "La bete :",
-      #if(input$espece=="Drosophile payetum"){photo<-"Drosophile payetum.jpg"}else if
-      #(input$espece=="Tabanus savetus"){photo<-"Tabanus savetus.jpg"}else if
-      #(input$espece=="Lucilia bertelettus"){photo<-"Lucilia bertelettus.jpg"}else if
-      #(input$espece=="Syrphus billitus"){photo<-"Syrphus billitus.jpg"}else if
-      #(input$espece=="Eristale bonumgirus"){photo<-"Eristale bonumgirus.jpg"},
-      photo<-paste0(input$espece,".jpg"),
-      HTML('<img src=photo/>'),
+      title = "Les bestioles :",
+      HTML('<img src="Drosophile payetum.jpg"height="352" width="470"/>'),
+      HTML('<img src="Tabanus savetus.jpg"height="352" width="470"/>'),
+      HTML('<img src="Lucilia bertelettus.jpg"height="352" width="470"/>'),
+      HTML('<img src="Syrphus billitus.jpg"height="352" width="470"/>'),
+      HTML('<img src="Eristale bonumgirus.jpg"height="352" width="470"/>'),
       easyClose = FALSE,
     ))
     
