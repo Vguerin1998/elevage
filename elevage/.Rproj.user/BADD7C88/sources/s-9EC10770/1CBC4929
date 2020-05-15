@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589362805460.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "1CBC4929",
+    "lastKnownWriteTime" : 1589530037,
+    "last_content_update" : 1589530037,
+    "path" : "C:/Users/basti/Desktop/GIT/elevage/elevage/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+        "cursorPosition" : "2,16",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
