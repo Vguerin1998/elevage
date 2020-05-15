@@ -35,6 +35,7 @@ ui <- fluidPage(
       textOutput("nbyb"),
       plotOutput("espece"),
       downloadButton("report", "Generer un rapport"),
+      actionButton("show", "Mais à quoi peut bien ressembler ce curieux animal ?"),
       textOutput("nous")   
     ) 
       )
