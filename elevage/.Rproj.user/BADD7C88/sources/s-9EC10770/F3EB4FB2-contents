@@ -90,9 +90,6 @@ base<-read.table("base.csv",header=TRUE,sep = ";",encoding = "UTF8")
                   choices = base[,1])
 ```
 
-## Partie Graphique
-
-A présent, voyons comment ces données sont représentées dans un graphique à barres :
 
 # Difficultés rencontrées
  
