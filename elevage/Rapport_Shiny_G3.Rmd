@@ -38,14 +38,6 @@ Dans le cas présent, nous nous intéresserons à l'évolution de la répartitio
 
 Cette application a pour objectif de comptabiliser des drosophiles dans un élevage et de faire varier des paramètres tels que différentes espèces de drosophile, le poids, le niveau de stress (qui augmente la reproduction) et le nombre de jour permettant d'élever une drosophile. 
 
-### Production
-
-En termes de production on souhaite observer à partir de combien de jour d'élevage avec une population de x individus de l'espèce x on peut esperer produire x g de matière sèche.
-
-### Reproduction
-
-En termes de reproduction, le but est de péréniser l'élevage la répatition Male/Femelle.
-Enfin, en termes d'analyses annexes, on souhaite observer le nombre d'individus avec un potentiel génétique intéressant (yeux bleus)leur permettant de servir d’animal de compagnie est de x.
 
 # Application réalisée
 
