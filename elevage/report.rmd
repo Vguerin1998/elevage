@@ -9,7 +9,6 @@ params:
     pop: na
     poids: na
 ---
-
 # Production
 
 Au bout du `r params$j` eme jour d’elevage avec une population de `r params$pop` individus de l’espèce `r params$s` on peut esperer produire `r params$poids` g de matière sèche.
@@ -20,4 +19,7 @@ Dans le but de péréniser l’élevage la répatition Male/femelle est la suiva
 
 # Autre débouchés
 
-Le nombre d’individus avec un potentiel génétique intéressant (yeux bleus) leur permettant de servir d’animal de compagnie est de x.
+Le nombre d’individus avec un potentiel génétique intéressant (yeux bleus) leur permettant de servir d’animal de compagnie est de `r params$j`.
+
+
+
